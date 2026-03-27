@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import bannerImage from "../assets/msta-banner.png";
 
 const WEBHOOK_URL =
-  "https://services.leadconnectorhq.com/hooks/E6kJjCkXCeOgpU5OhZJh/webhook-trigger/b55f1109-04a5-422c-859f-2c46b72d5f59";
+  "https://services.leadconnectorhq.com/hooks/E6kJjCkXCeOgpU5OhZJh/webhook-trigger/2a50b2e3-1c6d-4d06-8912-e0ab31c47681";
 
 export default function EventLandingPage() {
   const navigate = useNavigate();
@@ -12,6 +12,7 @@ export default function EventLandingPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     source: "MSTA Event Landing Page",
@@ -156,6 +157,15 @@ export default function EventLandingPage() {
                 name="firstName"
                 placeholder="First Name"
                 value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
                 onChange={handleChange}
                 required
               />
